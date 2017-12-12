@@ -31,7 +31,7 @@ defmodule SearchQueryParserEx.LexerTest do
       },
       {
         "removes several spaces and non-al-num in a row",
-        "  too  many   * spaces$#(  )*\"\"  \t",
+        "  too  many   * spaces$#(  )*\"\"' '  \t",
         [term("too"), op(" "), term("many"), op(" "), term("spaces"), op(" "), op("("), op(")")]
       },
       {
