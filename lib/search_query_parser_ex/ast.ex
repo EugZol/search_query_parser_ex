@@ -10,8 +10,8 @@ defmodule SearchQueryParserEx.Ast do
 
   def to_string(ast), do: reduce(ast, &print_ast/1)
 
-  defp print_ast({:" ", x, y}), do: "(#{x} #{y})"
-  defp print_ast({:"!", x}), do: "(! #{x})"
-  defp print_ast({op, x, y}), do: "(#{x} #{op} #{y})"
+  defp print_ast({:" ", x, y}), do: "(#{x}<->#{y})"
+  defp print_ast({:"!", x}), do: "(!#{x})"
+  defp print_ast({op, x, y}), do: "(#{x}#{op}#{y})"
   defp print_ast(x), do: Kernel.to_string(x)
 end
